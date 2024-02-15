@@ -17,12 +17,12 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import index
+from .views import recipe_list
 
 urlpatterns = [
-    path('recipes/list', index, name='rList'),
-    path('recipe/1', index, name='rOne'),
-    path('recipe/2', index, name='rTwo'),
+    path('recipes/list', recipe_list, name='rList'),
+    path('recipe/1', recipe_list, name='rOne'),
+    path('recipe/2', recipe_list, name='rTwo'),
 ]
 
 app_name = "ledger"
