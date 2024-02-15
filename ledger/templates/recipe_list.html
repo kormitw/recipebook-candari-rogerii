@@ -5,8 +5,9 @@
     <body>
         <h1>Recipe List</h1>
         <ul>
-            <li>recipe 1</li>
-            <li>recipe 2</li>
+            {% for recipe in recipes %}
+                <li>{{ recipe }}</li>
+            {% endfor%}
         </ul>
     </body>
 </html>
