@@ -3,10 +3,10 @@ from django.shortcuts import render
 def recipe_list(request):
     ctx = {
         "recipes": [
-            {
-                "name": "Recipe 1",
-                "ingredients": [
-                    {
+        {
+            "name": "Recipe 1",
+            "ingredients": [
+                {
                     "name": "tomato",
                     "quantity": "3pcs"
                 },
@@ -26,11 +26,11 @@ def recipe_list(request):
                     "name": "sinigang mix",
                     "quantity": "1 packet"
                 }
-                ],
-                "link": "/recipe/1"
-            },
-            {
-                "name": "Recipe 2",
+            ],
+            "link": "/recipe/1"
+        },
+        {
+            "name": "Recipe 2",
             "ingredients": [
                 {
                     "name": "garlic",
@@ -62,49 +62,37 @@ def recipe_list(request):
                 }
             ],
             "link": "/recipe/2"
-            }
-        ]
+        }
+    ]
     }
     return render(request, "recipe_list.html", ctx)
 
 def recipe1(request):
     ctx = {
-        "recipes": [
-            {
-                "name": "Recipe 2",
+            "name": "Recipe 1",
             "ingredients": [
                 {
-                    "name": "garlic",
-                    "quantity": "1 head"
+                    "name": "tomato",
+                    "quantity": "3pcs"
                 },
                 {
                     "name": "onion",
                     "quantity": "1pc"
                 },
                 {
-                    "name": "vinegar",
-                    "quantity": "1/2cup"
+                    "name": "pork",
+                    "quantity": "1kg"
                 },
                 {
                     "name": "water",
-                    "quantity": "1 cup"
+                    "quantity": "1L"
                 },
                 {
-                    "name": "salt",
-                    "quantity": "1 tablespoon"
-                },
-                {
-                    "name": "whole black peppers",
-                    "quantity": "1 tablespoon"
-                },
-                {
-                    "name": "pork",
-                    "quantity": "1 kilo"
+                    "name": "sinigang mix",
+                    "quantity": "1 packet"
                 }
             ],
-            "link": "/recipe/2"
-            },
-        ]
+            "link": "/recipe/1"
     }
     return render(request, "recipe1.html", ctx)
 
