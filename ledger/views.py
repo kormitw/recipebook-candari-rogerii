@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def recipes_list(request):
+def recipe_list(request):
     ctx = {
         "recipes": [
             {
