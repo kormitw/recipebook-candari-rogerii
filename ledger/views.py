@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Recipe
+from .models import Recipe, Ingredient, RecipeIngredient
 
 def recipe_list(request):
     recipes = Recipe.objects.all()
@@ -8,34 +8,12 @@ def recipe_list(request):
     }
     return render(request, "recipe_list.html", ctx)
 
-def recipe1(request):
+def recipe(request):
+    ingredients = Ingredient.objects.get(pk=1)
     ctx = {
-            "name": "Recipe 1",
-            "ingredients": [
-                {
-                    "name": "tomato",
-                    "quantity": "3pcs"
-                },
-                {
-                    "name": "onion",
-                    "quantity": "1pc"
-                },
-                {
-                    "name": "pork",
-                    "quantity": "1kg"
-                },
-                {
-                    "name": "water",
-                    "quantity": "1L"
-                },
-                {
-                    "name": "sinigang mix",
-                    "quantity": "1 packet"
-                }
-            ],
-            "link": "/recipe/1"
+         'ingredient' : ingredients   
     }
-    return render(request, "recipe1.html", ctx)
+    return render(request, "recipe.html", ctx)
 
 def recipe2(request):
     ctx = {
@@ -73,4 +51,30 @@ def recipe2(request):
             "link": "/recipe/2"
     }
     return render(request, "recipe2.html", ctx)
+    '''
+    "name": "Recipe 1",
+            "ingredients": [
+                {
+                    "name": "tomato",
+                    "quantity": "3pcs"
+                },
+                {
+                    "name": "onion",
+                    "quantity": "1pc"
+                },
+                {
+                    "name": "pork",
+                    "quantity": "1kg"
+                },
+                {
+                    "name": "water",
+                    "quantity": "1L"
+                },
+                {
+                    "name": "sinigang mix",
+                    "quantity": "1 packet"
+                }
+            ],
+            "link": "/recipe/"
+    '''
 # Create your views here.
