@@ -8,14 +8,14 @@ def recipe_list(request):
     }
     return render(request, "recipe_list.html", ctx)
 
-def recipe(request):
-    ingredients = Ingredient.objects.get(pk=1)
+def recipe(request, pk):
+    ingredients = RecipeIngredient.objects.filter(recipe__name="<recipe.name>")
     ctx = {
-         'ingredient' : ingredients   
+         'ingredients' : ingredients   
     }
     return render(request, "recipe.html", ctx)
 
-def recipe2(request):
+def recipe2(request, pk):
     ctx = {
          "name": "Recipe 2",
             "ingredients": [
