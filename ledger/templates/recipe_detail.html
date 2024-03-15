@@ -2,6 +2,18 @@
 {% extends 'base.html' %}
 
 {% block title %} {{ object.name }} {% endblock %}
+{% block banner%}
+    <h1>Recipe Book</h1>
+    {% if request.user.is_authenticated %}
+        <h2>Logged In</h2>
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit"> logout </button>
+        </form>
+    {% else %}
+        <a href = "{% url 'login' %}"> Login </a>
+    {% endif %}
+{% endblock %}
 {% block content %}
     <h1>{{ object.name }}</h1>
     <h3>Author: {{ object.author }}</h3>
